@@ -18,16 +18,13 @@ fn panic(_info: &PanicInfo) -> ! {
 
 
 /*
-    Entry points for Windows - these are the function that will be first called.
+    Entry point with linux convention
     Normally, the compiler generates them for us and calls our main() function,
     but we don't use stdlib and the main wrapping, so we need to make them by ourselves
 */
-#[no_mangle]
-// This function is for CONSOLE subsystem
-pub extern "C" fn mainCRTStartup() -> ! {
-    main();
-}
-#[no_mangle]
-pub extern "C" fn main() -> ! {
+#[no_mangle] // don't mangle the name of this function
+pub extern "C" fn _start() -> ! {
+    // this function is the entry point, since the linker looks for a function
+    // named `_start` by default
     loop {}
 }
