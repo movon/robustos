@@ -1,0 +1,7 @@
+[package]
+name = "robustos"
+version = "0.1.0"
+authors = ["Tal"]
+edition = "2018"
+
+[dependencies]
