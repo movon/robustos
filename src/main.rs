@@ -1,6 +1,9 @@
 // Don't use standard library because it won't exist on our OS
 #![no_std]
+// Don't create an entry point - we will make it ourselves
 #![no_main]
+// Add the experimental asm! feature
+#![feature(asm)]
 
 use core::panic::PanicInfo;
 
