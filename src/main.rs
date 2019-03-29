@@ -20,6 +20,7 @@ fn panic(_info: &PanicInfo) -> ! {
     but we don't use stdlib and the main wrapping, so we need to make them by ourselves
 */
 #[no_mangle]
+// This function is for CONSOLE subsystem
 pub extern "C" fn mainCRTStartup() -> ! {
     main();
 }
